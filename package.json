@@ -1,0 +1,22 @@
+{
+  "name": "movie-series-filter",
+  "version": "1.0.0",
+  "description": "Filtering movies and television series according to condition.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deep-muni94/Movie-Series-Filter.git"
+  },
+  "author": "Deep Muni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deep-muni94/Movie-Series-Filter/issues"
+  },
+  "homepage": "https://github.com/deep-muni94/Movie-Series-Filter#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
