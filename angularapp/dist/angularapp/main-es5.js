@@ -1,3 +1,9 @@
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
@@ -51,7 +57,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<button (click)=\"dothis()\"></button>\r\n\r\n<p>{{message}}</p>\r\n";
+    __webpack_exports__["default"] = "<app-display></app-display>\r\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/display/display.component.html":
+  /*!**************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/display/display.component.html ***!
+    \**************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppDisplayDisplayComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"wrapper-header\">\n  <div class=\"wrapper-header-right\">\n    <select id=\"year\" class=\"drop-down\" (change)=\"update(Y, C)\" #Y>\n      <option *ngFor=\"let year of years\">{{year}}</option>\n    </select>\n    <select id=\"cast\" class=\"drop-down\" (change)=\"update(Y, C)\" #C>\n      <option *ngFor=\"let artist of cast\">{{artist}}</option>\n    </select>\n  </div>\n</div>\n\n<div class=\"wrapper\">\n  <div class=\"movie\" *ngFor=\"let movie of movies\">\n    <img src=\"{{movie.Poster}}\" id=\"poster\">\n    <div class=\"title\">{{movie.Title}}</div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -761,40 +787,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
-    /* harmony import */
 
-
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
-
-    var AppComponent = /*#__PURE__*/function () {
-      function AppComponent(http) {
-        _classCallCheck(this, AppComponent);
-
-        this.http = http;
-        this.title = 'angularapp';
-        this.message = '';
-      }
-
-      _createClass(AppComponent, [{
-        key: "dothis",
-        value: function dothis() {
-          var _this = this;
-
-          this.http.get("http://localhost:5000/add").subscribe(function (data) {
-            _this.message = data['status'];
-          });
-        }
-      }]);
-
-      return AppComponent;
-    }();
-
-    AppComponent.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    var AppComponent = function AppComponent() {
+      _classCallCheck(this, AppComponent);
     };
 
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -864,17 +859,267 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _display_display_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ./display/display.component */
+    "./src/app/display/display.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _display_display_component__WEBPACK_IMPORTED_MODULE_6__["DisplayComponent"]],
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"]],
       providers: [],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })], AppModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/app.service.ts":
+  /*!********************************!*\
+    !*** ./src/app/app.service.ts ***!
+    \********************************/
+
+  /*! exports provided: AppService */
+
+  /***/
+  function srcAppAppServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AppService", function () {
+      return AppService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+
+    var AppService = /*#__PURE__*/function () {
+      function AppService(http) {
+        _classCallCheck(this, AppService);
+
+        this.http = http;
+        this.url = "/assets/raw/data.json";
+      }
+
+      _createClass(AppService, [{
+        key: "getData",
+        value: function getData() {
+          return this.http.get(this.url);
+        }
+      }]);
+
+      return AppService;
+    }();
+
+    AppService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+      }];
+    };
+
+    AppService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], AppService);
+    /***/
+  },
+
+  /***/
+  "./src/app/display/display.component.css":
+  /*!***********************************************!*\
+    !*** ./src/app/display/display.component.css ***!
+    \***********************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppDisplayDisplayComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = ".wrapper-header{\r\n  overflow: hidden;\r\n  border-bottom: 1px solid #cfcfcf;\r\n  padding: 20px 50px;\r\n  margin-bottom: 20px\r\n}\r\n\r\n.wrapper-header-right {\r\n  float: right;\r\n  overflow: hidden;\r\n}\r\n\r\n.drop-down{\r\n  width: 200px;\r\n  height: 24px;\r\n  margin-left: 26px;\r\n  font-family: Arial;\r\n  font-size: 15px;\r\n  color: #474747;\r\n  border-radius: 5px;\r\n  border: solid 1px #cfcfcf;\r\n  line-height: 24px;\r\n  -moz-text-align-last:center;\r\n       text-align-last:center;\r\n  outline: none;\r\n}\r\n\r\n.wrapper{\r\n  background-color: #d2cfcf;\r\n  border-radius: 10px;\r\n  padding: 0 20px 20px;\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: flex-start;\r\n}\r\n\r\n.movie{\r\n  width: 270px;\r\n  height: 370px;\r\n  padding: 15px;\r\n  border-radius: 10px;\r\n  background-color: #ffffff;\r\n  margin-right: 20px;\r\n  margin-top: 20px;\r\n  overflow: hidden;\r\n}\r\n\r\n#poster{\r\n  width: 270px;\r\n  border-radius: 10px;\r\n  height: 320px;\r\n}\r\n\r\n.title{\r\n  word-wrap: break-word;\r\n  text-overflow: ellipsis;\r\n  font-size: 20px;\r\n  line-height: 25px;\r\n  overflow: hidden;\r\n  height: 50px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlzcGxheS9kaXNwbGF5LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBZ0I7RUFDaEIsZ0NBQWdDO0VBQ2hDLGtCQUFrQjtFQUNsQjtBQUNGOztBQUVBO0VBQ0UsWUFBWTtFQUNaLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2YsY0FBYztFQUNkLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsaUJBQWlCO0VBQ2pCLDJCQUFzQjtPQUF0QixzQkFBc0I7RUFDdEIsYUFBYTtBQUNmOztBQUVBO0VBQ0UseUJBQXlCO0VBQ3pCLG1CQUFtQjtFQUNuQixvQkFBb0I7RUFDcEIsYUFBYTtFQUNiLGVBQWU7RUFDZiwyQkFBMkI7QUFDN0I7O0FBRUE7RUFDRSxZQUFZO0VBQ1osYUFBYTtFQUNiLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxxQkFBcUI7RUFDckIsdUJBQXVCO0VBQ3ZCLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsZ0JBQWdCO0VBQ2hCLFlBQVk7QUFDZCIsImZpbGUiOiJzcmMvYXBwL2Rpc3BsYXkvZGlzcGxheS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLndyYXBwZXItaGVhZGVye1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNjZmNmY2Y7XHJcbiAgcGFkZGluZzogMjBweCA1MHB4O1xyXG4gIG1hcmdpbi1ib3R0b206IDIwcHhcclxufVxyXG5cclxuLndyYXBwZXItaGVhZGVyLXJpZ2h0IHtcclxuICBmbG9hdDogcmlnaHQ7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxufVxyXG5cclxuLmRyb3AtZG93bntcclxuICB3aWR0aDogMjAwcHg7XHJcbiAgaGVpZ2h0OiAyNHB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAyNnB4O1xyXG4gIGZvbnQtZmFtaWx5OiBBcmlhbDtcclxuICBmb250LXNpemU6IDE1cHg7XHJcbiAgY29sb3I6ICM0NzQ3NDc7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGJvcmRlcjogc29saWQgMXB4ICNjZmNmY2Y7XHJcbiAgbGluZS1oZWlnaHQ6IDI0cHg7XHJcbiAgdGV4dC1hbGlnbi1sYXN0OmNlbnRlcjtcclxuICBvdXRsaW5lOiBub25lO1xyXG59XHJcblxyXG4ud3JhcHBlcntcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZDJjZmNmO1xyXG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgcGFkZGluZzogMCAyMHB4IDIwcHg7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xyXG59XHJcblxyXG4ubW92aWV7XHJcbiAgd2lkdGg6IDI3MHB4O1xyXG4gIGhlaWdodDogMzcwcHg7XHJcbiAgcGFkZGluZzogMTVweDtcclxuICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7XHJcbiAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxufVxyXG5cclxuI3Bvc3RlcntcclxuICB3aWR0aDogMjcwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICBoZWlnaHQ6IDMyMHB4O1xyXG59XHJcblxyXG4udGl0bGV7XHJcbiAgd29yZC13cmFwOiBicmVhay13b3JkO1xyXG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICBsaW5lLWhlaWdodDogMjVweDtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIGhlaWdodDogNTBweDtcclxufVxyXG4iXX0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/display/display.component.ts":
+  /*!**********************************************!*\
+    !*** ./src/app/display/display.component.ts ***!
+    \**********************************************/
+
+  /*! exports provided: DisplayComponent */
+
+  /***/
+  function srcAppDisplayDisplayComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DisplayComponent", function () {
+      return DisplayComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../app.service */
+    "./src/app/app.service.ts");
+
+    var DisplayComponent = /*#__PURE__*/function () {
+      function DisplayComponent(service) {
+        _classCallCheck(this, DisplayComponent);
+
+        this.service = service; // public series;
+
+        this.years = new Set();
+        this.cast = new Set();
+      }
+
+      _createClass(DisplayComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this = this;
+
+          this.service.getData().subscribe(function (data) {
+            _this.movies_data = data["movies"]; // this.series_data = data["series"];
+
+            _this.movies = _this.movies_data;
+
+            _this.getYear();
+
+            _this.getCast();
+          });
+        }
+      }, {
+        key: "getYear",
+        value: function getYear() {
+          this.years.add("All");
+
+          var _iterator = _createForOfIteratorHelper(this.movies),
+              _step;
+
+          try {
+            for (_iterator.s(); !(_step = _iterator.n()).done;) {
+              var movie = _step.value;
+              this.years.add(movie.Released);
+            }
+          } catch (err) {
+            _iterator.e(err);
+          } finally {
+            _iterator.f();
+          }
+        }
+      }, {
+        key: "getCast",
+        value: function getCast() {
+          this.cast.add("All");
+
+          var _iterator2 = _createForOfIteratorHelper(this.movies),
+              _step2;
+
+          try {
+            for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+              var movie = _step2.value;
+
+              var _iterator3 = _createForOfIteratorHelper(movie.Cast),
+                  _step3;
+
+              try {
+                for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+                  var artist = _step3.value;
+                  this.cast.add(artist);
+                }
+              } catch (err) {
+                _iterator3.e(err);
+              } finally {
+                _iterator3.f();
+              }
+            }
+          } catch (err) {
+            _iterator2.e(err);
+          } finally {
+            _iterator2.f();
+          }
+        }
+      }, {
+        key: "update",
+        value: function update(Y, C) {
+          if (Y.value == "All" && C.value == "All") {
+            this.movies = this.movies_data;
+          } else if (Y.value == "All") {
+            this.movies = this.movies_data.filter(function (movie) {
+              return movie.Cast.includes(C.value);
+            });
+          } else if (C.value == "All") {
+            this.movies = this.movies_data.filter(function (movie) {
+              return movie.Released == Y.value;
+            });
+          } else {
+            this.movies = this.movies_data.filter(function (movie) {
+              return movie.Released == Y.value && movie.Cast.includes(C.value);
+            });
+          }
+        }
+      }]);
+
+      return DisplayComponent;
+    }();
+
+    DisplayComponent.ctorParameters = function () {
+      return [{
+        type: _app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]
+      }];
+    };
+
+    DisplayComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-display',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./display.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/display/display.component.html"))["default"],
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./display.component.css */
+      "./src/app/display/display.component.css"))["default"]]
+    })], DisplayComponent);
     /***/
   },
 
