@@ -1,0 +1,60 @@
+.wrapper-header{
+  overflow: hidden;
+  border-bottom: 1px solid #cfcfcf;
+  padding: 20px 50px;
+  margin-bottom: 20px
+}
+
+.wrapper-header-right {
+  float: right;
+  overflow: hidden;
+}
+
+.drop-down{
+  width: 200px;
+  height: 24px;
+  margin-left: 26px;
+  font-family: Arial;
+  font-size: 15px;
+  color: #474747;
+  border-radius: 5px;
+  border: solid 1px #cfcfcf;
+  line-height: 24px;
+  text-align-last:center;
+  outline: none;
+}
+
+.wrapper{
+  background-color: #d2cfcf;
+  border-radius: 10px;
+  padding: 0 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.movie{
+  width: 270px;
+  height: 370px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-right: 20px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+#poster{
+  width: 270px;
+  border-radius: 10px;
+  height: 320px;
+}
+
+.title{
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  line-height: 25px;
+  overflow: hidden;
+  height: 50px;
+}

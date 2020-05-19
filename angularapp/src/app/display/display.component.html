@@ -1,0 +1,17 @@
+<div class="wrapper-header">
+  <div class="wrapper-header-right">
+    <select id="year" class="drop-down" (change)="update(Y, C)" #Y>
+      <option *ngFor="let year of years">{{year}}</option>
+    </select>
+    <select id="cast" class="drop-down" (change)="update(Y, C)" #C>
+      <option *ngFor="let artist of cast">{{artist}}</option>
+    </select>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="movie" *ngFor="let movie of movies">
+    <img src="{{movie.Poster}}" id="poster">
+    <div class="title">{{movie.Title}}</div>
+  </div>
+</div>
